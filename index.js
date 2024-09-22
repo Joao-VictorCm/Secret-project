@@ -29,7 +29,7 @@ function acesso(req, res, next) {
 
 app.use(acesso);
 
-// Servir o arquivo index.html
+
 app.get("/", (req, res) => {
   res.setHeader("Content-Type", "text/html"); // Força o tipo MIME para HTML
   res.removeHeader("Content-Disposition"); // Remove cabeçalhos que forçam download
@@ -44,7 +44,7 @@ app.post("/check", (req, res) => {
   } else {
     res.setHeader("Content-Type", "text/html"); 
     res.removeHeader("Content-Disposition");
-    res.sendFile(path.join(__dirname, "public", "page.html"));
+    res.sendFile(path.join(__dirname, "public", "acessoNegado.html"));
   }
 });
 
