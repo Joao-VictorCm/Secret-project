@@ -1,51 +1,60 @@
-# Secret-project
+# SecurePage Access 🚪🔒
 
-Criado para treinar as solicitações get e post.
+Este projeto é uma aplicação em **Node.js** com **Express** que implementa um sistema de verificação de senha para acessar diferentes páginas.  
 
-## Índice
+## 🛠️ Tecnologias Utilizadas
 
-- [Descrição](#descrição)
-- [Tecnologias](#tecnologias)
-- [Middleware](#middleware)
-- [Instalação](#instalação)
-- [Uso](#uso)
+- **Node.js**: Ambiente de execução para JavaScript.
+- **Express.js**: Framework para criação de servidores web.
+- **Body-parser**: Middleware para processar dados de formulários.
+- **Path**: Módulo para manipulação de caminhos de arquivos.
 
+---
 
-# Descrição
+## 🚀 Como Executar o Projeto
 
-Este código implementa uma aplicação web simples utilizando o framework Express para Node.js. A aplicação permite que os usuários insiram uma senha e, com base na senha fornecida, determina se o acesso é permitido ou negado.
+1. **Clone o repositório**:
+   ```bash
+   git clone git@github.com:Joao-VictorCm/SecurePage-Access.git
+   ```
+2. **Instale as dependências**: 
+```bash
+   npm install
+```
 
-Principais Componentes:
-Servidor Express: O código cria um servidor na porta 3001.
-Arquivos Estáticos: Utiliza middleware para servir arquivos estáticos da pasta public.
-Autenticação: Um middleware verifica se a senha enviada pelo usuário é "teste". Se for, o acesso é concedido; caso contrário, o acesso é negado.
-Rotas:
-A rota GET / serve a página inicial (page.html), onde o usuário pode inserir a senha.
-A rota POST /check verifica a senha e redireciona o usuário para a página de acesso permitido (acesso.html) ou para a página de acesso negado (acessoNegado.html).
-Funcionamento
-O usuário acessa a aplicação e é apresentado a um formulário para inserir a senha.
-Ao submeter o formulário, a senha é verificada.
-Dependendo do resultado da verificação, o usuário é redirecionado para a página correspondente.
+3. **Execute o servidor**:
+```bash
+  node index.js
+```
 
-## Tecnologias
+4. **Acesse no navegador**:
+   
+ Abra o navegador e vá para: http://localhost:3001.
 
-JavaScript, 
-Node.js, 
-Express,
-HTML.
+ ---
 
-## Middleware
+## 🔑 Como Funciona
+1. Acesse a página inicial:
+    - O servidor serve o arquivo page.html localizado na pasta public.
+  
+2. Digite a senha:
+   - A senha correta é ILoveProgramming.
+   - Se a senha estiver correta, você será redirecionado para acesso.html.
+   - Caso contrário, será redirecionado para acessoNegado.html.
 
-Path,
-FileURLToPath,
-Body-parser,
+3. Estrutura de Páginas:
+   - page.html: Formulário de entrada para a senha.
+   - acesso.html: Página exibida ao digitar a senha correta.
+   - acessoNegado.html: Página exibida ao digitar a senha incorreta.
 
-## Instalação
-
-1. Clone o repositório:
-   git clone git@github.com:Joao-VictorCm/Secret-project.git
-
-# Uso
-Para executar o projeto, use o seguinte comando:
-
-node index.js
+   ---
+  
+## 📂 Estrutura do Projeto
+```plaintext
+Copiar código
+📁 public
+   ├── page.html         # Página inicial (formulário de senha)
+   ├── acesso.html       # Página de acesso autorizado
+   └── acessoNegado.html # Página de acesso negado
+📄 index.js             # Código principal do servidor
+📄 package.json           # Dependências e metadados do projeto
